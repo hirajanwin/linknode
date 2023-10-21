@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { siteConfig } from './page'
 import { Providers } from '@/components/Provider'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://linknode.vercel.app"),
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s - LinkNode`,
   },
   description: siteConfig.description,
   verification: {
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
   },
   // added new keywords for seo
   keywords: [
-    "bitly url shortner",
+    "bitly url shortener",
     "bitly link shortener",
     "link shortener",
     "url shortener",
     "bitly link",
     "tinyurls",
     "all in one link",
-    "free url shortner",
+    "free url shortener",
     "linknode",
     "onelink",
     "social links",
@@ -52,13 +53,14 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [`${siteConfig.url}/og-image.png`],
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [`${siteConfig.url}/og-image.png`],
     creator: "@sujjeeee",
   },
   icons: {
@@ -77,6 +79,7 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <Analytics />
       </body>
     </html>
   )
