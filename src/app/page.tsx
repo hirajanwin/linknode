@@ -5,7 +5,7 @@ import ProfileForm from "@/components/forms/ProfileForm";
 import SocialLinksForm from "@/components/forms/SocialLinksForm";
 import MobileMockup from "@/components/MobileMockup";
 import PreviewButton from "@/components/buttons/PreviewButton";
-import DemoData from "@/components/buttons/DemoData";
+
 import { buttonVariants } from "@/components/ui/button";
 import Publish from "@/components/buttons/Publish";
 import { Github } from "lucide-react";
@@ -15,7 +15,7 @@ import Background from "@/components/background/Background";
 export const siteConfig = {
   name: "Bio.New - Free Link in Bio to curate many links in one page.",
   description:
-    "LinkNode is an open-source tool that helps you generate one link for all your links.",
+    "Bio.New is a simple tool that helps you create one website for all your links.",
   ogImage: "https://bio.new/og-image.png",
   url: "https://bio.new",
 };
@@ -31,8 +31,7 @@ export default function Home() {
 
           <Background />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 justify-center items-center w-full ">
-            <DemoData />
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-2 justify-center items-center w-full ">
             <Publish />
             <ShortenerButton />
           </div>

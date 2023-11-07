@@ -1,22 +1,21 @@
-import '../styles/globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { siteConfig } from './page'
-import { Providers } from '@/components/Provider'
-import { Analytics } from '@vercel/analytics/react';
+import "../styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { siteConfig } from "./page";
+import { Providers } from "@/components/Provider";
+import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-// Original source: https://github.com/sadmann7/skateshop/blob/main/src/app/layout.tsx
 export const metadata: Metadata = {
-  metadataBase: new URL("https://linknode.vercel.app"),
+  metadataBase: new URL("https://bio.new"),
   title: {
     default: siteConfig.name,
-    template: `%s - LinkNode`,
+    template: `%s - BioLink`,
   },
   description: siteConfig.description,
   verification: {
-    google: "5z2lDnQ6mdG9S2qZm74DNfOk3xdwLR-orzDHc5XiJxs"
+    google: "5z2lDnQ6mdG9S2qZm74DNfOk3xdwLR-orzDHc5XiJxs",
   },
   // added new keywords for seo
   keywords: [
@@ -34,12 +33,12 @@ export const metadata: Metadata = {
     "free linktree",
     "link in bio",
     "link in bio instagram",
-    "linktree"
+    "linktree",
   ],
   authors: [
     {
-      name: "sujjeee",
-      url: "https://github.com/sujjeee",
+      name: "bio.new",
+      url: "https://bio.new",
     },
   ],
   creator: "sujjeee",
@@ -61,26 +60,24 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og-image.png`],
-    creator: "@sujjeeee",
+    creator: "@imposter_center",
   },
   icons: {
     icon: "/favicon.ico",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
